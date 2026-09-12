@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mais Esperto que o Diabo, de Napoleon Hill — vale a pena?</title>
+<meta name="description" content="Resenha completa de Mais Esperto que o Diabo: como o livro nasceu, do que trata e por que ficou guardado por décadas antes de ser publicado.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #F4EEE1;
+  --paper-deep: #EAE0CB;
+  --wood-dark: #241B15;
+  --wood-dark-2: #372A20;
+  --oxblood: #8B3A3A;
+  --oxblood-deep: #6E2E2E;
+  --moss: #445D43;
+  --navy: #23344A;
+  --gold: #B8923D;
+  --ink: #2A231D;
+  --ink-soft: #5C5147;
+  --line: #D9CEB8;
+  --line-dark: rgba(244, 238, 225, 0.18);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; margin: 0 0 0.5em; font-weight: 600; line-height: 1.15; color: var(--ink); }
+p { margin: 0 0 1.25em; }
+ul { margin: 0; padding: 0; list-style: none; }
+
+.container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
+
+:focus-visible { outline: 3px solid var(--oxblood); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Sticky mini-header with persistent CTA */
+.sticky-bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--wood-dark);
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--line-dark);
+}
+.sticky-bar__inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.sticky-bar__title {
+  color: var(--paper);
+  font-family: 'Fraunces', serif;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 4px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+  flex-shrink: 0;
+}
+.btn--primary { background: var(--oxblood); color: var(--paper); }
+.btn--primary:hover { background: var(--oxblood-deep); transform: translateY(-2px); box-shadow: 0 10px 20px -8px rgba(139, 58, 58, 0.5); }
+.btn--ghost { background: transparent; border-color: var(--ink); color: var(--ink); }
+.btn--ghost:hover { background: var(--ink); color: var(--paper); }
+.btn--on-dark.btn--ghost { border-color: var(--paper); color: var(--paper); }
+.btn--on-dark.btn--ghost:hover { background: var(--paper); color: var(--wood-dark); }
+.btn--small { padding: 0.5rem 1.1rem; font-size: 0.8125rem; }
+
+/* Hero */
+.hero { background: var(--wood-dark); padding: 3.5rem 0 4rem; }
+.hero .container { display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: center; }
+@media (min-width: 760px) { .hero .container { grid-template-columns: 260px 1fr; gap: 3.5rem; } }
+
+.book-cover {
+  aspect-ratio: 2 / 3;
+  width: 220px;
+  background: var(--cover-bg, var(--oxblood));
+  color: var(--cover-fg, var(--paper));
+  border-radius: 3px;
+  padding: 1.6em 1.3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 20px 40px -16px rgba(0, 0, 0, 0.5), 0 2px 6px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+@media (min-width: 760px) { .book-cover { width: 260px; } }
+.book-cover::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px 0 0 3px;
+}
+.book-cover__title { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600; line-height: 1.2; }
+.book-cover__author { font-family: 'Inter', sans-serif; font-size: 0.8125rem; letter-spacing: 0.01em; opacity: 0.85; }
+
+.hero h1 { color: var(--paper); font-size: clamp(2rem, 4.5vw, 2.875rem); max-width: 16ch; }
+.hero .author { font-size: 1.0625rem; color: var(--gold); margin-bottom: 1rem; }
+.hero .tagline { color: var(--paper); opacity: 0.85; max-width: 48ch; font-size: 1.0625rem; }
+.hero .cta-row { margin-top: 1.75rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* Prose / article body */
+.prose { max-width: 680px; padding: 4.5rem 1.5rem; margin: 0 auto; }
+.prose h2 { font-size: 1.625rem; margin-top: 2.75rem; }
+.prose h2:first-of-type { margin-top: 0; }
+.prose .lead { font-size: 1.1875rem; color: var(--ink-soft); }
+
+/* Principles teaser cards */
+.principles { display: flex; flex-direction: column; gap: 0.9rem; margin: 1.5rem 0 2rem; }
+.principle-card {
+  background: var(--paper-deep);
+  border-left: 3px solid var(--gold);
+  padding: 1rem 1.35rem;
+  border-radius: 2px;
+  color: var(--ink);
+}
+
+.benefits-list li { position: relative; padding-left: 1.6em; margin-bottom: 0.9em; color: var(--ink); }
+.benefits-list li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0.5em;
+  width: 8px; height: 8px;
+  background: var(--oxblood);
+  border-radius: 1px;
+}
+
+.who-box {
+  background: var(--paper-deep);
+  border-left: 3px solid var(--moss);
+  padding: 1.5rem 1.75rem;
+  border-radius: 2px;
+  margin: 2rem 0;
+}
+.who-box h3 { font-size: 1.0625rem; margin-bottom: 0.5em; }
+.who-box p { margin: 0; color: var(--ink-soft); }
+
+.cta-banner { background: var(--paper-deep); border-radius: 4px; padding: 2.5rem; margin: 3rem 0; }
+.cta-banner h3 { font-size: 1.375rem; margin-bottom: 0.4em; }
+.cta-banner p { color: var(--ink-soft); margin-bottom: 1.5rem; }
+
+.faq details { border-top: 1px solid var(--line); padding: 1.1rem 0; }
+.faq details:last-child { border-bottom: 1px solid var(--line); }
+.faq summary { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.0625rem; cursor: pointer; list-style: none; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; float: right; font-family: 'Inter', sans-serif; color: var(--oxblood); }
+.faq details[open] summary::after { content: "\2013"; }
+.faq details p { margin-top: 0.75rem; margin-bottom: 0; color: var(--ink-soft); }
+
+.disclosure {
+  border-left: 3px solid var(--gold);
+  background: var(--paper-deep);
+  padding: 1.1rem 1.5rem;
+  font-size: 0.9375rem;
+  color: var(--ink-soft);
+  border-radius: 2px;
+  margin-top: 2.5rem;
+}
+
+.site-footer { background: var(--wood-dark); color: var(--paper); padding: 3rem 0; }
+.site-footer p { opacity: 0.75; font-size: 0.875rem; max-width: 60ch; margin: 0; }
+</style>
+</head>
+<body>
+
+<div class="sticky-bar">
+  <div class="container sticky-bar__inner">
+    <span class="sticky-bar__title">Mais Esperto que o Diabo</span>
+    <a href="https://meli.la/2ToE2Uq" class="btn btn--primary btn--small" target="_blank" rel="noopener sponsored">Ver preço</a>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="container">
+    <div class="book-cover" style="--cover-bg:#4A1420; --cover-fg:#F4EEE1;">
+      <span class="book-cover__title">Mais Esperto que o Diabo</span>
+      <span class="book-cover__author">Napoleon Hill</span>
+    </div>
+    <div>
+      <h1>Mais Esperto que o Diabo</h1>
+      <p class="author">Napoleon Hill · O Mistério Revelado da Liberdade e do Sucesso</p>
+      <p class="tagline">Escrito em 1938, mas guardado por décadas antes de ser publicado — uma conversa imaginária entre Hill e o próprio "Diabo" sobre o que realmente trava o sucesso das pessoas.</p>
+      <div class="cta-row">
+        <a href="https://meli.la/2ToE2Uq" class="btn btn--primary" target="_blank" rel="noopener sponsored">Ver preço no Mercado Livre</a>
+        <a href="#resenha" class="btn btn--ghost btn--on-dark">Ler a resenha</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<article class="prose" id="resenha">
+  <p class="lead">Escrito por Napoleon Hill logo depois de Pense e Enriqueça, o livro só foi publicado décadas mais tarde, em 2011 — a esposa do autor e a crítica da época consideraram o conteúdo controverso demais para ser lançado naquele momento. O resultado é uma obra estruturada como uma entrevista imaginária entre Hill e o próprio "Diabo".</p>
+
+  <h2>Sobre o livro</h2>
+  <p>Diferente do tom mais convencional de Pense e Enriqueça, aqui Hill escolhe um recurso narrativo mais provocador para tratar do mesmo tema de fundo: o que separa quem realiza seus objetivos de quem vive travado por medo e falta de direção.</p>
+
+  <h2>Como o livro nasceu</h2>
+  <p>Hill escreveu o texto em 1938, logo após o sucesso de Pense e Enriqueça, num período marcado pela Grande Depressão e às vésperas da Segunda Guerra Mundial. Ele usa sua própria trajetória — incluindo entrevistas reais que fez décadas antes com figuras como Andrew Carnegie, Thomas Edison e Henry Ford — como pano de fundo para as perguntas que faz ao "Diabo" no livro.</p>
+
+  <h2>Do que se trata</h2>
+  <p>Na narrativa, o Diabo — que se autodenomina "Sua Majestade" — afirma influenciar a maior parte das pessoas através de um pequeno grupo de medos e do que Hill chama de "deriva": viver sem propósito definido, como passageiro da própria vida em vez de condutor dela. A partir desse diálogo, o livro propõe princípios para reconhecer esses padrões e retomar direção sobre a própria vida.</p>
+
+  <h3 style="font-size:1.125rem; margin-top:2rem;">Alguns dos princípios que você vai aprender</h3>
+  <div class="principles">
+    <div class="principle-card">Como reconhecer o que Hill chama de "deriva" — viver sem propósito, deixando a vida acontecer em vez de conduzi-la.</div>
+    <div class="principle-card">Por que o medo, segundo o livro, é a principal ferramenta usada para travar decisões importantes.</div>
+    <div class="principle-card">Como escolher um propósito claro muda a forma de lidar com escolhas do dia a dia.</div>
+    <div class="principle-card">Por que aceitar erros como aprendizado é tratado como diferencial entre quem avança e quem trava.</div>
+    <div class="principle-card">Como a procrastinação aparece disfarçada de desculpas razoáveis no dia a dia.</div>
+  </div>
+
+  <h2>Por que vale a pena ler</h2>
+  <ul class="benefits-list">
+    <li>Guardado por décadas antes de ser publicado, o que já desperta curiosidade sobre o conteúdo.</li>
+    <li>O formato de diálogo torna a leitura mais envolvente do que um livro de princípios tradicional.</li>
+    <li>Complementa Pense e Enriqueça, do mesmo autor, olhando para o lado dos obstáculos em vez de só para os princípios de sucesso.</li>
+    <li>Reflexões sobre propósito e procrastinação continuam relevantes quase um século depois de escritas.</li>
+  </ul>
+
+  <div class="who-box">
+    <h3>Para quem é este livro</h3>
+    <p>Para quem já leu Pense e Enriqueça e quer se aprofundar na obra de Napoleon Hill, ou para quem sente que vive "à deriva", sem direção clara na vida.</p>
+  </div>
+
+  <div class="cta-banner">
+    <h3>Pronto para reconhecer o que trava suas próprias decisões?</h3>
+    <p>O livro está disponível no Mercado Livre, com opções em capa comum e outros formatos.</p>
+    <a href="https://meli.la/2ToE2Uq" class="btn btn--primary" target="_blank" rel="noopener sponsored">Ver preço no Mercado Livre</a>
+  </div>
+
+  <h2>Perguntas frequentes</h2>
+  <div class="faq">
+    <details>
+      <summary>Precisa ler Pense e Enriqueça antes desse livro?</summary>
+      <p>Não é obrigatório, mas ajuda a entender o contexto da obra de Hill como um todo, já que os dois livros foram escritos quase na mesma época.</p>
+    </details>
+    <details>
+      <summary>O livro tem viés religioso, por falar sobre o Diabo?</summary>
+      <p>É um recurso narrativo, quase alegórico, para representar medo e autossabotagem — não uma discussão religiosa ou teológica.</p>
+    </details>
+    <details>
+      <summary>Por que o livro demorou tanto para ser publicado?</summary>
+      <p>Segundo relatos, a esposa de Hill e a crítica da época consideraram o conteúdo controverso demais para o momento, e o manuscrito só veio a público décadas depois.</p>
+    </details>
+  </div>
+
+  <p class="disclosure">Este site contém um link de afiliado do Mercado Livre. Se você comprar o livro através dele, podemos receber uma pequena comissão, sem nenhum custo adicional para você.</p>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2026 Mais Esperto que o Diabo — Resenha. Este site participa do programa de afiliados do Mercado Livre.</p>
+  </div>
+</footer>
+
+</body>
+</html>
